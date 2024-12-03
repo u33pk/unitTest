@@ -1,0 +1,50 @@
+# source binary: apply_dynamic.abc
+
+.language ECMAScript
+
+# ====================
+# LITERALS
+
+
+# ====================
+# RECORDS
+
+.record _ESSlotNumberAnnotation {
+}
+
+# ====================
+# METHODS
+
+L_ESSlotNumberAnnotation:
+	u32 slotNumberIdx { 0x3 }
+.function any func(any a0, any a1, any a2, any a3, any a4) <static> {
+	tryldglobalbyname 0x0, "print"
+	callargs2 0x1, a3, a4
+	ldundefined
+	returnundefined
+}
+
+L_ESSlotNumberAnnotation:
+	u32 slotNumberIdx { 0x4 }
+.function any func_main_0(any a0, any a1, any a2) <static> {
+	definefunc 0x0, test:(any,any,any,any), 0x1
+	stglobalvar 0x1, "test"
+	definefunc 0x2, func:(any,any,any,any,any), 0x2
+	stglobalvar 0x3, "func"
+	ldundefined
+	returnundefined
+}
+
+L_ESSlotNumberAnnotation:
+	u32 slotNumberIdx { 0x0 }
+.function any test(any a0, any a1, any a2, any a3) <static> {
+	ldundefined
+	returnundefined
+}
+
+# ====================
+# STRING
+
+[offset:0x96, name_value:func]
+[offset:0x9c, name_value:print]
+[offset:0xa3, name_value:test]
